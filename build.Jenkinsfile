@@ -7,7 +7,6 @@ pipeline {
                 sh 'docker build -t my-roberta .'
             }
         }
-    }
         stage('Push To ECR') {
             steps {
                 sh '''

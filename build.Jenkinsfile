@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviroment {
+    environment {
         ECR_URL = '352708296901.dkr.ecr.eu-central-1.amazonaws.com/tamirmarz-repo'
     }
     stages {

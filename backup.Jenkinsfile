@@ -9,7 +9,7 @@ pipeline {
         stage('BackUp Jenkins') {
             steps {
                 sh '''
-                tar -czvf JenkinsBackUp.tar.gz --exclude=='$JENKINS_HOME/caches' --exclude=='$JENKINS_HOME/plugins' --exclude=='$JENKINS_HOME/jobs' --exclude=='$JENKINS_HOME/logs' --exclude=='$JENKINS_HOME/workspace' $JENKINS_HOME
+                tar -czvf JenkinsBackUp.tar.gz --exclude==$JENKINS_HOME/caches --exclude==$JENKINS_HOME/plugins --exclude==$JENKINS_HOME/jobs --exclude==$JENKINS_HOME/logs --exclude==$JENKINS_HOME/workspace $JENKINS_HOME
                 '''
             }
         }

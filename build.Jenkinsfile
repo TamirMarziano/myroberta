@@ -18,6 +18,11 @@ pipeline {
                 docker push $ECR_URL:my-roberta_$BUILD_NUMBER
                 '''
             }
+            post {
+                always {
+                    sh '''
+                    docker image prune -a --force --filter "label!=delete=false"
+                    '''
         }
         stage('Trigger Deploy') {
             steps {

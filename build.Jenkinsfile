@@ -23,6 +23,8 @@ pipeline {
                     sh '''
                     docker image prune -a --force --filter "label!=delete=false"
                     '''
+                }
+            }
         }
         stage('Trigger Deploy') {
             steps {

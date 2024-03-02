@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Unittest') {
             steps {
-                sh 'exit 1'
+                sh 'python3 -m pytest --junitxml results.xml tests'
             }
         }
         stage('Lint') {

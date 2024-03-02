@@ -12,7 +12,10 @@ pipeline {
         }
         stage('Lint') {
             steps {
-                sh 'python3 -m pylint *.py'
+                sh '''
+                python3 -m pylint *.py
+                pip install pylint
+                '''
             }
         }
         stage('Functional test') {

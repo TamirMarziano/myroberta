@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Lint') {
             steps {
-                sh 'echo "linting"'
+                sh 'python3 -m pylint *.py'
             }
         }
         stage('Functional test') {

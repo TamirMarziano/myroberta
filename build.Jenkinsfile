@@ -1,6 +1,7 @@
 pipeline {
     agent {
         docker {
+            label "general"
             image '352708296901.dkr.ecr.eu-central-1.amazonaws.com/tamirmarz-repo:jenkins_agent'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
